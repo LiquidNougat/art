@@ -346,4 +346,12 @@ TEST_F(AssemblerThumb2Test, StoreWordPairToNonThumbOffset) {
   DriverStr(expected, "StoreWordPairToNonThumbOffset");
 }
 
+TEST_F(AssemblerThumb2Test, Clz) {
+  __ clz(arm::R0, arm::R1);
+
+  const char* expected = "clz r0, r1\n";
+
+  DriverStr(expected, "clz");
+}
+
 }  // namespace art
