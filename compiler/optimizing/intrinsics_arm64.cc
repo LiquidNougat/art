@@ -567,7 +567,10 @@ static void GenMathRound(LocationSummary* locations,
 }
 
 void IntrinsicLocationsBuilderARM64::VisitMathRoundDouble(HInvoke* invoke) {
-  CreateFPToIntPlusTempLocations(arena_, invoke);
+  // See intrinsics.h.
+  if (kRoundIsPlusPointFive) {
+    CreateFPToIntPlusTempLocations(arena_, invoke);
+  }
 }
 
 void IntrinsicCodeGeneratorARM64::VisitMathRoundDouble(HInvoke* invoke) {
@@ -575,7 +578,10 @@ void IntrinsicCodeGeneratorARM64::VisitMathRoundDouble(HInvoke* invoke) {
 }
 
 void IntrinsicLocationsBuilderARM64::VisitMathRoundFloat(HInvoke* invoke) {
-  CreateFPToIntPlusTempLocations(arena_, invoke);
+  // See intrinsics.h.
+  if (kRoundIsPlusPointFive) {
+    CreateFPToIntPlusTempLocations(arena_, invoke);
+  }
 }
 
 void IntrinsicCodeGeneratorARM64::VisitMathRoundFloat(HInvoke* invoke) {
