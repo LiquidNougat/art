@@ -11531,6 +11531,7 @@ artMterpAsmAltInstructionStart = .L_ALT_op_nop
     .balign 128
 .L_ALT_op_unused_fc: /* 0xfc */
 /* File: arm64/alt_stub.S */
+
 /*
  * Inter-instruction transfer stub.  Call out to MterpCheckBefore to handle
  * any interesting requests and then jump to the real instruction
